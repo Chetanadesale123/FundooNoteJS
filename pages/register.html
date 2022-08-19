@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/register.css">
+    <script src="../script/register.js"></script>
+
     <title>FundooNoteJS</title>
 </head>
 
@@ -25,17 +27,22 @@
                 </div>
                 <span class="header-text">Create your FundoNote Account</span>
                 <div class="input">
-                    <div class="name">
-                        <input type="text" placeholder="First name">
+                    <div id="div1" class="name">
+                        <input id="FN" type="text" placeholder="First name">
                     </div>
                     <div class="name">
-                        <input type="text" placeholder="Last name">
+                        <input id="LN" type="text" placeholder="Last name">
                     </div>
                 </div>
-                <div class="name3">
+                <!-- <div class="name3">
                     <input type="text" placeholder="Username">
                 </div>
-                <small>You can use letters, numbers & periods</small><br><br>
+                <small>You can use letters, numbers & periods</small><br><br> -->
+                <p id="nameshint"></p>
+                <div class="inputusername" id="uid">
+                    <input id="username" type="text" placeholder="User Name">
+                </div>
+                <p id="usernameHint">You can use letters, numbers and periods</p>
                 <div>
                     <a href="" class="form-link">Use my current email address instead</a>
                 </div>

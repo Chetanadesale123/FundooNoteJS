@@ -36,27 +36,57 @@
 }
 .name{
     border:none;
-    height:30px;
+    height:35px;
     width: 200px;
+    display: flex;
     flex-direction: row;
     margin-top: 12px;
 }
 .pwd{
     border:none;
-    height:30px;
+    height:35px;
     width: 200px;
     display: flex;
     flex-direction: row;
     margin-top: 15px;
 }
-.name3{
+/* .name3{
 
     height:30px;
     width: 200px;
     display: flex;
     justify-content: left;
     flex-direction: row;
+} */
+ .inputusername {
+    width: 95%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 5px;
+    margin-top: 24px;
+
 }
+
+#username {
+    border: none;
+    height: 30px;
+    width: 95%;
+} 
+#usernameHint {
+    font-size: 12px;
+    color: gray;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+#nameshint {
+    font-size: 12px;
+    color: gray;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+
 .image{
     border:none;
     height:100%;
@@ -95,5 +125,11 @@
     word-wrap: break-word;
     text-align: center;
     text-justify: inter-word;
+}
+.errormsg{
+    border: 2px solid red;
+    width: 200px;
+    height: 30px;
+    background-color: orange;
 }
   

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content:center ;
     align-items: center;
-    height: 97.5vh;
+    height: 110vh;
     font-family: Arial, sans-serif;
 }
 .inner{
@@ -135,11 +135,11 @@ input:focus{
     margin-bottom: 10px;
   }
   input[type="submit"]{
-    background: blue;
+    background: #257bd0;;
     color: #fff;
     border: none;
     width: 22%;
-    height: 18px;
+    height: 36px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
