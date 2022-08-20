@@ -7,66 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/register.css">
     <script src="../script/register.js"></script>
-
-    <title>FundooNoteJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>FundooRegister</title>
 </head>
 
 <body>
     <div class="outer">
-        <div class="innerClass">
-            <div class="form">
-                <div>
-                    <h3 style="font-size: 30px; font-style: inherit">
-                        <span style="color: rgb(44, 44, 230)">F</span>
-                        <span style="color: rgb(216, 65, 65)">u</span>
-                        <span style="color: rgb(219, 154, 32)">n</span>
-                        <span style="color: rgb(46, 46, 128)">d</span>
-                        <span style="color: rgb(72, 177, 72)">o</span>
-                        <span style="color: rgb(141, 17, 17)">o</span>
-                    </h3>
-                </div>
-                <span class="header-text">Create your FundoNote Account</span>
-                <div class="input">
-                    <div id="div1" class="name">
-                        <input id="FN" type="text" placeholder="First name">
+        <div class="inner">
+            <div class="Lcontainer">
+                <div class="header">
+                    <div class="Logo">
+                        <span style="color: #4169e1;">F</span>
+                        <span style="color: #d52b2b;">u</span>
+                        <span style="color: #ff8c00;">n</span>
+                        <span style="color: #4169e1;">d</span>
+                        <span style="color: #008000;">o</span>
+                        <span style="color: #d52b2b;">o</span>
                     </div>
-                    <div class="name">
-                        <input id="LN" type="text" placeholder="Last name">
-                    </div>
+                    <span class="text">Create your FundoNote Account</span>
                 </div>
-                <!-- <div class="name3">
-                    <input type="text" placeholder="Username">
-                </div>
-                <small>You can use letters, numbers & periods</small><br><br> -->
-                <p id="nameshint"></p>
-                <div class="inputusername" id="uid">
-                    <input id="username" type="text" placeholder="User Name">
-                </div>
-                <p id="usernameHint">You can use letters, numbers and periods</p>
-                <div>
-                    <a href="" class="form-link">Use my current email address instead</a>
-                </div>
-                <div>
-                    <div class="password">
-                        <div class="pwd">
-                            <input type="text" placeholder="password">
+                <div class="registration-form">
+                    <div class="Name">
+                        <div id="div1">
+                            <input type="fname" class="input1" class="input2" id="n1" placeholder="First name *">
+                            <span id="Nhint1" class="Errmsg"></span>
                         </div>
-                        <div class="pwd">
-                            <input type="text" placeholder="confirmPassword">
+                        <div id="div2">
+                            <input type="lname" class="input1" class="input2" id="n2" placeholder="Last name *">
+                            <span id="Nhint2" class="Errmsg" style="padding-left: 20px;"></span>
                         </div>
                     </div>
-                </div>
-                <small>Use 8 or more characters with a mix of letters, numbers & symbols</small><br><br>
-                <input type="checkbox" id="check">
-                <label for="check"> Show password</label><br><br>
-                <div class="buttons">
-                    <a class="signin" href="../pages/signin.html">Sign in Instead</a>
-                    <button class="next" id="btn">Next</button>
+                    <div id="div3">
+                        <input type="username" class="input1" class="input2" id="n3"
+                            placeholder="Username123@gmail.com *">
+                        <span id="UsernameHint" class="Hint" class="Errmsg">You can use letters, numbers &
+                            periods</span>
+                    </div>
+                    <a href="" class="Link">Use my current email address instead</a>
+                    <div class="pwd">
+                        <div id="div4">
+                            <input type="password" class="input1" class="input2" id="p1"
+                                placeholder="Password *">
+                        </div>
+                        <div id="div5">
+                            <input type="password" class="input1" class="input2" id="p2"
+                                placeholder="Confirm *">
+                        </div>
+                    </div>
+                    <a id="passHint" class="Hint" class="Errmsg">Use 8 or more characters with a mix of letters,
+                        numbers & symbols</a>
+                    <div class="form-checkbox">
+                        <input type="checkbox" class="checkbox" onclick="show()">
+                        <label class="container">Show password </label>
+                    </div>
+                    <div class="form-btn">
+                        <a href="../pages/signin.html" class="form-btn1">Sign in instead</a>
+                        <button class="next" id="btnj">Next</button>
+                        <!-- <input id="btnj" type="submit"  value="Create"> -->
+                    </div>
                 </div>
             </div>
-            <div class="image">
-                <img src="../assets/account (1).svg" alt="">
-                <span class="img-text">One Account. All of Fundoo working for you.</span>
+            <div class="Rcontainer">
+                <img class="Image" src="../assets/account (1).svg">
+                <span class="img-text">One Account. All of Fundo working for you.</span>
             </div>
         </div>
     </div>

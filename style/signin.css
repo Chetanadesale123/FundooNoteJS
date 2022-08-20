@@ -3,10 +3,10 @@
     flex-direction: column;
     justify-content:center ;
     align-items: center;
-    height: 110vh;
+    height: 105vh;
     font-family: Arial, sans-serif;
 }
-.inner{
+.loginContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,11 +37,11 @@ h4{
     font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
     font-weight: 100;
 }
-.text{
+.header-text{
     margin-top: 13.5px;
     font-size: 16px;
 }
-.LoginForm{
+.login-form{
     margin-top: 30px;
     min-height: 30%;
     display: flex;
@@ -49,28 +49,28 @@ h4{
     align-items: center;
     width: 100%;
 }
-.pwd{
+.form-pass{
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-top: 1px;
     width: 100%;
 }
 .pass{
-    width: 85%;
+    width: 86%;
 }
-.check{
+.form-checkbox{
     display: flex;
     justify-content: left;
-    margin:17px 0 0 30px;
+    margin:8px 0 0 30px;
     font-size: 13px;
 }
-.UserEmail{
-    width: 85%;
+.user-email{
+    width: 86%;
 }
-.loginLink{
+.login-footer{
     font-size: 13px;
     margin: 2px 0 0 45px;
-    padding-top: 25px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -81,13 +81,10 @@ input{
     border: 1px solid #e6e4e4;
     border-radius: 4px;
     padding: 0 10px;
-    height: 53.5px;
+    height: 50px;
     font-size: 15px;
     width: 70%;
-}
-input:focus{
-    border: 1.5px solid #1f52f9;
-}
+  }
   input[type="email"]{
     display: block;
     width: 90.8%;
@@ -111,41 +108,54 @@ input:focus{
     width: 9%;
     height: 18px;
     margin-top: -1px;
-}
-.link1{
+  }
+  .link1{
     text-decoration: none;
     color: #1144ed;
     font-size: 14px;
     padding: 0 0 0 7px;
-}
-.btn{
+  }
+  .form-btn{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0 0 42px;
     width: 82%;
-    margin-bottom: 15px;
   }
   .form-btn1{
     font-size: 14px;
     color: #4971f6;
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: arial rounded mt;
     text-decoration: none;
-    margin-bottom: 10px;
   }
-  input[type="submit"]{
-    background: #257bd0;;
+  #btnj{
+    background: #257bd0;
     color: #fff;
     border: none;
     width: 22%;
-    height: 36px;
-    border-radius: 5px;
+    height: 34.5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
-    margin-bottom: 18px;
-  } 
-
-
-
+    font-size: 15px;
+  }
   
+  /* input[type="submit"]:hover{
+    background: #3260f6;
+  }
+  .input1:focus{
+  border: 1.5px solid #1f52f9;
+} */
+.input2{
+  border: 1.5px solid red;
+  color: red;
+}
+.input2 input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+}
+.Errmsg{
+  color: red;
+  padding-top: 3px;
+  font-size: 12px;
+  padding-left: 18px;
+}
