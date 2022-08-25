@@ -6,68 +6,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/dashboard.css">
-    <script src="../script/dashboard.js"></script>
-    <title>Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>FundooDashboard</title>
 </head>
 
 <body>
-    <nav>
-        <div class="outer">
-            <div id="menu">
-                <button><img src="../assets/menu.svg"></img></button>
+    <header>
+        <div class="header1">
+            <button class="menu-icon tooltip" id="btn">
+                <img src="../assets/menu.svg" style="opacity: 0.6;width:24px; height: 26px;" alt="">
+                <span class="tooltiptext">Menu</span>
+            </button>
+            <img src="../assets/keep_logo.png" style="margin-left:23px ;width:27px; height: 36px;" alt="">
+            <span class="Ltext">FundooNote</span>
+            <div class="serch-box">
+                <button class="search-icon  tooltip">
+                    <img src="../assets/search_FILL0_wght400_GRAD0_opsz48.svg" />
+                    <span class="tooltiptext">Search</span>
+                </button>
+                <input class="search-input" placeholder="Search" autocomplete="off" />
+                <button class="close-icon hide">
+                    <img style="width: 22px;" src="../assets/close.svg" />
+                </button>
             </div>
-            <img src="../assets/keep_logo.png">
-            <span class="Ltext">Fundoo</span>
         </div>
-        <div class="search">
-            <i class="search-icon"><img src="../assets/search_FILL0_wght400_GRAD0_opsz48.svg"></i>
-            <input class="search-text" type="text" placeholder="Search" />
-            <i class="search-icon" id="cancel"><img src="../assets/close.svg"></i>
+        <div class="header2">
+            <button>
+                <img src="../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" />
+            </button>
+            <button>
+                <img src="../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" />
+            </button>
+            <button>
+                <img src="../assets/settings_FILL0_wght400_GRAD0_opsz48.svg" />
+            </button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button>
+                <img src="../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" />
+            </button>
+            <button>
+                <img style="width: 30px;" src="../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" />
+            </button>
         </div>
-        <div class="tool">
-            <button><img src="../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" title="refresh"></button>
-            <button><img src="../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" title="view"></button>
-            <button><img src="../assets/settings_FILL0_wght400_GRAD0_opsz48.svg" title=""></button>
-        </div>
-        <div class="user">
-            <button><img src="../assets/apps_FILL0_wght400_GRAD0_opsz48.svg"></button>
-            <button><img src="../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg"></button>
-        </div>
-    </nav>
-    <div class="Navbar">
-        <ul>
-            <li id="Notes">
-                <span class="img">
-                    <img src="../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg">
-                </span>
-                <span class="text">Notes</span>
+    </header>
+    <div class="side-navbar" id="navbar">
+        <ul class="nav-list">
+            <li id="notes">
+                <a href="#">
+                    <i><img src="../assets/lightbulb.png" alt=""></i>
+                    <span class="link-name">Notes</span>
+                </a>
             </li>
-            <li id="Reminders">
-                <span class="img">
-                    <img src="../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg">
-                </span>
-                <span class="text">Reminders</span>
+            <li id="reminder">
+                <a href="#">
+                    <i class="notes"><img src="../assets/notification.png" alt=""></i>
+                    <span class="link-name">Reminders</span>
+                </a>
             </li>
-            <li id="EditLables">
-                <span>
-                    <img src="../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">
-                </span>
-                <span class="text">Edit Lables</span>
+            <li id="editLabel">
+                <a href="#">
+                    <i class="notes"><img src="../assets/edit.png" alt=""></i>
+                    <span class="link-name">Edit Labels</span>
+                </a>
             </li>
-            <li id="Archive">
-                <span>
-                    <img src="../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
-                </span>
-                <span class="text">Archive</span>
+            <li id="archive">
+                <a href="#">
+                    <i class="notes"><img src="../assets/archive.png" alt=""></i>
+                    <span class="link-name">Archive</span>
+                </a>
             </li>
             <li id="trash">
-                <span>
-                    <img src="../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">
-                </span>
-                <span class="text">Trash</span>
+                <a href="#">
+                    <i class="notes"><img src="../assets/Trash.png" style="width: 23px;" alt=""></i>
+                    <span class="link-name">Trash</span>
+                </a>
             </li>
         </ul>
     </div>
+    <div class="dashboard-content">
+        <div class="create-note" class="expand">
+            <div class="note-title">
+                <input type="text" id="title" class="create1" autocomplete="off" placeholder="Take a note...">
+                <button class="pinnote" id="pin">
+                    <img src="../assets/pin.png" />
+                </button>
+            </div>
+            <textarea type="text" id="description" class="create2" autocomplete="off"
+                placeholder="Take a note..."></textarea>
+            <div id="footer" class="footer-content">
+                <div class="footer-icons">
+                    <button id="Reminde me">
+                        <img src="../assets/add_reminder.png" />
+                    </button>
+                    <button id="Collaborator" class="header-icon">
+                        <img src="../assets/add_person.png" />
+                    </button>
+                    <button id="Background options" class="bg-color">
+                        <img src="../assets/color.png" />
+                    </button>
+                    <button id="Add image">
+                        <img src="../assets/add_image.png" />
+                    </button>
+                    <button id="Archive">
+                        <img src="../assets/archive.png" />
+                    </button>
+                    <button id="More">
+                        <img src="../assets/more.png" />
+                    </button>
+                    <button id="Undo">
+                        <img src="../assets/undo.png" />
+                    </button>
+                    <button id="Redo">
+                        <img src="../assets/redo.png" />
+                    </button>
+                </div>
+                <button class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="../script/dashboard.js"></script>
+
 </body>
 
 </html>

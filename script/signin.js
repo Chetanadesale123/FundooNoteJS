@@ -50,35 +50,38 @@ window.addEventListener('DOMContentLoaded',()=>{
    cls.addEventListener('click', () => {
     console.log("Hello",userName.value, password.value);
     //document.getElementById('btn').innerHTML = "welcome";
-    if ( (un == 1) && (psw == 1) ) {
-      let data = {
+    
+      let loginData = {
         
         email: userName.value,
         password: password.value
-        //FirstName: this.registerForm.value.firstName,
-        // {
-        //   "email": "string",
-        //   "password": "string"
-        // }
-
       }
-      console.log(data);
+      console.log(loginData);
       $.ajax({
         url: "https://localhost:44371/api/User/Login",
         type: "POST",
-        data: JSON.stringify(data),
+        data: JSON.stringify(loginData),
         headers: {
           'Content-Type': 'application/json'
         },
-        success: function (result) {
-          console.log(result);
+        success: function (Result) {
+          console.log(Result);
+          localStorage.setItem('token',Result.response);
+          token=localStorage.getItem('token');
+             if(token)
+             {
+               window.location.href = "http://127.0.0.1:5500/pages/dashboard.html";
+             }
         },
         error: function (error) {
           console.log(error);
         }
       })
-    }
+    
   })
+  function Resetpage(){
+    document.getElementById('login-form').reset();
+  }
 
 
 
