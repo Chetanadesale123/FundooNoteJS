@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log("=> Connected to Dashboard.js");
     let token = localStorage.getItem('token');
     console.log(token);
-    //getAllNotes();
+    getAllNotes();
 
     let navbar = document.querySelector(".side-navbar");
     let btn = document.querySelector('#btn');
@@ -11,11 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
     let title = document.getElementById('title');
     let description = document.getElementById('description');
     let colours = 'Blue';
-    let IsArchived = 'true';
+    // let IsArchived = 'true';
     let Reminder = '2022-08-24T03:25:40.112Z';
     let Image = 'string';
-    let IsPinned = 'true';
-    let isDeleted = 'true';
+    //let IsPinned = 'true';
+    //let isDeleted = 'true';
     let CreatedAt = '2022-08-24T03:25:40.112Z';
     let editedAt = '2022-08-24T03:25:40.112Z';
     console.log(title.value);
@@ -27,7 +27,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let closeIcon = document.querySelector('.close-icon');
     let serchbox = document.querySelector('.search-input');
 
-    //var noteArray;
+    let displaytnotes = document.querySelector('.notes');
+
+    var noteArray;
 
     btn.onclick = function () {
         navbar.classList.toggle("opened");
@@ -70,15 +72,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.log(result);
                 resetNoteFields();
                 toggleNOteFields();
+                getAllNotes();
             },
             error: function (error) {
                 console.log(error);
+                toggleNOteFields();
             }
-
         })
-        toggleNOteFields();
-    })
 
+    })
     function resetNoteFields() {
         document.getElementById('title').value = '';
         document.getElementById('description').value = '';
@@ -94,5 +96,33 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('pin').classList.remove('show');
             resetNoteFields();
         }
+    }
+    $(function () {
+        $("ul li a").click(function () {
+            $("ul li a").removeClass("active");
+            $("ul li a").removeClass("buttonDisabled");
+            $(this).addClass('active');
+            $(this).addClass('buttonDisabled');
+        });
+
+    });
+    function getAllNotes() {
+        $.ajax({
+            url: 'https://localhost:44371/api/Note/AllNotes',
+            type: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+            success: function (result) {
+                noteArray = result.response;
+                //noteArray.reverse();
+                console.log(result);
+                displaytnotes.click();
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        })
     }
 })

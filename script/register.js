@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-  console.log("connected to js");
+  console.log("connected to register.js");
   let regexName = RegExp('^[A-Z]{1}[a-z]{2,}$');
   let regexEmail = RegExp('^([A-Za-z0-9]{3,20})([.][A-Za-z0-9]{1,10})*([@][A-Za-z]{2,5})+[.][A-Za-z]{2,3}([.][A-Za-z]{2,3})?$');
   let regexPass = RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$_])[a-zA-Z0-9@#$_]{8,}$');

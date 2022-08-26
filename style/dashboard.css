@@ -36,6 +36,7 @@
   header{
     display: flex;
     z-index: 1;
+    background-color: white;
     position: fixed;
     align-items: center;
     width: 100%;
@@ -151,13 +152,13 @@
     height: 48px;
 }
 
-.nav-list li:focus{
+/* .nav-list li:focus{
   background-color: lightgrey;
-}
+} */
 
 .nav-list li a i img{
   margin-left: 25px;
-  padding-top: 4px;
+  padding-top: 10px;
 }
 
 .nav-list li a i{
@@ -166,11 +167,12 @@
 
 .side-navbar ul li a{
     display: flex;
+    align-items: center;
     text-decoration: none;
     color: black;
 }
 
-.side-navbar.opened ul li a:hover{
+/* .side-navbar.opened ul li a:hover{
   background-color: rgb(237, 234, 234);
   border-radius: 0px 40px 40px 0px;
 }
@@ -179,6 +181,15 @@
   background-color: rgb(237, 234, 234);
   border-radius: 40px 40px 40px 40px;
 
+} */
+
+.active{
+  background: #FEEFC3;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.buttonDisabled {
+  pointer-events: none;
 }
 
 .link-name{
@@ -193,18 +204,18 @@
 .dashboard-content{
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 24%;
-  left: 59vh;
+  position: absolute;
+  top: 190px;
+  left: 460px;
   transform: translate(-17%,-17%);
   width: 82%;
   height: 90%;
 }
 
 .create-note{
-  margin: 27.5px 0 2px 19.7%;
-  width: 47.5%;
-  height: 6.5%;
+  margin: 27.5px 0 25px 19.7%;
+  width: 600px;
+  height: 45px;
   box-shadow: 0px 1px 5px 0.5px darkgray;    
   overflow: hidden;
   border-radius: 5px;
@@ -212,7 +223,7 @@
 }
 
 .create-note.expand{
-  height: 18.8%;
+  height: 135px;
 }
 
 .create-note div input{
@@ -330,4 +341,4 @@ textarea::-webkit-scrollbar{
   transition-delay: 0.7s;
   visibility: visible;
 }
-  
+
