@@ -25,10 +25,11 @@
                     <img src="../assets/search_FILL0_wght400_GRAD0_opsz48.svg" />
                     <span class="tooltiptext">Search</span>
                 </button>
-                <input class="search-input" placeholder="Search" autocomplete="off" />
+                <!-- <input class="search-input" placeholder="Search" autocomplete="off" />
                 <button class="close-icon hide">
                     <img style="width: 22px;" src="../assets/close.svg" />
-                </button>
+                </button> -->
+                <input class="search-input" type="search" id="Search" placeholder="Search" autocomplete="off" />
             </div>
         </div>
         <div class="header2">
@@ -57,7 +58,7 @@
                     <span class="link-name">Notes</span>
                 </a>
             </li>
-            <li id="reminder">
+            <li id="reminder" class="Remindernotes">
                 <a href="#">
                     <i class="notes"><img src="../assets/notification.png" alt=""></i>
                     <span class="link-name">Reminders</span>
@@ -69,13 +70,13 @@
                     <span class="link-name">Edit Labels</span>
                 </a>
             </li>
-            <li id="archive">
+            <li id="archive" class="Archivenotes">
                 <a href="#">
                     <i class="notes"><img src="../assets/archive.png" alt=""></i>
                     <span class="link-name">Archive</span>
                 </a>
             </li>
-            <li id="trash">
+            <li id="trash" class="Trashnotes">
                 <a href="#">
                     <i class="notes"><img src="../assets/Trash.png" style="width: 23px;" alt=""></i>
                     <span class="link-name">Trash</span>
@@ -91,8 +92,7 @@
                     <img src="../assets/pin.png" />
                 </button>
             </div>
-            <textarea type="text" id="description" class="create2" autocomplete="off"
-                placeholder="Take a note..."></textarea>
+            <textarea type="text" id="description" class="create2" autocomplete="off" placeholder="Take a note..."></textarea>
             <div id="footer" class="footer-content">
                 <div class="footer-icons">
                     <button id="Reminde me">
@@ -123,7 +123,9 @@
                 <button class="close-btn">Close</button>
             </div>
         </div>
-        
+        <div class="display-notes"  id="Notes">
+        </div>
+
     </div>
     <script src="../script/dashboard.js"></script>
 
