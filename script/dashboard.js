@@ -154,6 +154,25 @@ Archivenotes.addEventListener('click', () => {
     displayAllNotes(notes);
 })
 
+//function which call Archive note API
+function archiveNote(noteid){
+    $.ajax({
+        url: `https://localhost:44371/api/Note/Archive/${noteid}`,
+        type: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        },
+        success: function (result) {
+            console.log(result);
+            getAllNotes();
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    })
+}
+
 //fun display noteArray by filtering and here we are using template literals to pass code dynamically. 
 function displayAllNotes(Notesdata) {
     console.log(Notesdata);
@@ -168,7 +187,7 @@ function displayAllNotes(Notesdata) {
             <img src="../assets/add_person.png" />
             <img src="../assets/color.png" />
             <img src="../assets/add_image.png" />
-            <img src="../assets/archive.png" />
+            <img onclick="archiveNote(${note.noteid})" src="../assets/archive.png" />
             <img src="../assets/more.png" />
             </div>
         </div>
